@@ -12,10 +12,10 @@ import {
   Activity,
   Globe,
   Sliders,
-  Sparkles,
   ExternalLink,
   Lock,
-  Clock
+  Clock,
+  Sparkles
 } from 'lucide-react';
 import { AFFILIATE_CONFIG } from '../../config/affiliates';
 
@@ -35,61 +35,69 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
 
   return (
     <div className="space-y-24 pb-20">
-      {/* 1. HERO SECTION (Matching Brandguideline.png) */}
-      <section className="pt-10 sm:pt-16 lg:pt-20">
+      {/* 1. HERO SECTION (Exact Typography & Spatial Alignment from Brandguideline.png) */}
+      <section className="pt-8 sm:pt-14 lg:pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              {/* Display Headline */}
-              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-extrabold tracking-tight text-[#153E43] leading-[1.08] text-balance">
-                Make your <br className="hidden sm:inline" />
-                mark online.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Hero Content: 7 Columns */}
+            <div className="lg:col-span-7 space-y-6 sm:space-y-7">
+              {/* Quiet unboxed descriptor / brand foundation */}
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#C86445]">
+                <span>HostMarc Studio</span>
+                <span aria-hidden="true" className="text-[#153E43]/30">·</span>
+                <span className="text-[#153E43]/70">Websites · Hosting · Growth</span>
+              </div>
+
+              {/* Display Headline in Plus Jakarta Sans */}
+              <h1 className="text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] font-black tracking-[-0.03em] text-[#153E43] leading-[1.06] uppercase">
+                MAKE YOUR MARK ONLINE
               </h1>
 
-              {/* Sub-headline from Brandguideline.png */}
-              <p className="text-lg sm:text-xl text-[#153E43]/85 font-medium leading-relaxed max-w-xl text-balance">
-                Thoughtful websites. Reliable hosting. Measurable growth.
+              {/* SEO-Friendly Value Proposition & Clear Description */}
+              <p className="text-lg sm:text-xl text-[#153E43]/90 font-semibold leading-relaxed max-w-xl">
+                Reliable Hosting, Thoughtful Website and measurable Growth.
               </p>
 
-              {/* Primary & Secondary CTAs from Brandguideline.png */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              {/* Primary & Secondary Dual CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
                 <button
                   onClick={() => onNavigate('contact')}
-                  className="px-7 py-3.5 bg-[#153E43] hover:bg-[#0D282C] text-white font-semibold text-sm rounded-lg shadow-sm transition-all text-center cursor-pointer"
+                  className="px-7 py-3.5 bg-[#153E43] hover:bg-[#0D282C] text-white font-semibold text-sm rounded-lg shadow-sm transition-all text-center cursor-pointer flex items-center justify-center gap-2"
                 >
-                  Start your project
+                  <span>Explore Web Services</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => {
-                    const el = document.getElementById('services-overview');
-                    el?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#153E43] hover:text-[#C86445] transition-colors cursor-pointer"
+                  onClick={() => onNavigate('reviews')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#153E43] hover:text-[#C86445] transition-colors cursor-pointer border border-[#153E43]/20 hover:border-[#153E43]/40 rounded-lg bg-white/40"
                 >
-                  <span>Explore services</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Inspect Hosting Hub</span>
+                  <span className="text-xs font-mono font-bold text-[#C86445]">9.4 / 10</span>
                 </button>
               </div>
 
-              {/* Two Customer Journeys Quick Banner */}
-              <div className="pt-4 border-t border-[#E2DDD2] flex flex-wrap items-center gap-6 text-xs text-[#153E43]/70 font-medium">
-                <span className="flex items-center gap-1.5 text-[#153E43] font-semibold">
+              {/* Two Distinct Business Paths Footnote */}
+              <div className="pt-4 border-t border-[#E2DDD2] flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[#153E43]/75">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#153E43]" />
+                  <span className="font-semibold text-[#153E43]">Client Services:</span>
+                  <span>Bespoke websites &amp; SEO</span>
+                </div>
+                <span className="hidden sm:inline text-[#E2DDD2]">|</span>
+                <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#C86445]" />
-                  Need a custom website?
-                </span>
-                <span>Services, maintenance &amp; growth retainers</span>
-                <span className="hidden sm:inline">·</span>
-                <button
-                  onClick={() => onNavigate('reviews')}
-                  className="text-[#C86445] hover:underline font-bold"
-                >
-                  Looking for Hostinger hosting? View guide →
-                </button>
+                  <span className="font-semibold text-[#153E43]">Hosting Hub:</span>
+                  <button
+                    onClick={() => onNavigate('reviews')}
+                    className="text-[#C86445] hover:underline font-medium"
+                  >
+                    Verified Hostinger promo &amp; benchmarks →
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Right Hero Graphic: Tactile Architectural 3D Sculpture from Brandguideline.png */}
+            {/* Right Hero Graphic: High-Resolution 3D Interlocking Sculpture from Brand Guideline */}
             <div className="lg:col-span-5 flex justify-center">
               <HeroSculpture className="w-full" />
             </div>
@@ -104,7 +112,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
             {/* 01: Web design & development */}
             <div
               onClick={() => onNavigate('contact')}
-              className="group space-y-3 cursor-pointer p-4 -mx-4 rounded-xl hover:bg-white/50 transition-colors"
+              className="group space-y-3 cursor-pointer p-5 -mx-5 rounded-xl hover:bg-white/60 transition-colors border border-transparent hover:border-[#E2DDD2]"
             >
               <div className="text-sm font-mono font-bold text-[#C86445]">01</div>
               <h3 className="text-lg font-bold text-[#153E43] group-hover:text-[#C86445] transition-colors flex items-center justify-between">
@@ -112,14 +120,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
                 <span className="text-[#153E43] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </h3>
               <p className="text-sm text-[#153E43]/75 leading-relaxed">
-                Beautiful, fast and functional websites built for your goals. Custom coded or WordPress, with zero bloat.
+                Fast, responsive, and functional websites built for your business goals. Clean code, optimal Core Web Vitals, and zero software bloat.
               </p>
             </div>
 
             {/* 02: Hosting & maintenance */}
             <div
               onClick={() => onNavigate('reviews')}
-              className="group space-y-3 cursor-pointer p-4 -mx-4 rounded-xl hover:bg-white/50 transition-colors"
+              className="group space-y-3 cursor-pointer p-5 -mx-5 rounded-xl hover:bg-white/60 transition-colors border border-transparent hover:border-[#E2DDD2]"
             >
               <div className="text-sm font-mono font-bold text-[#C86445]">02</div>
               <h3 className="text-lg font-bold text-[#153E43] group-hover:text-[#C86445] transition-colors flex items-center justify-between">
@@ -127,14 +135,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
                 <span className="text-[#153E43] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </h3>
               <p className="text-sm text-[#153E43]/75 leading-relaxed">
-                Secure, reliable hosting and ongoing support, so you're always online. Hostinger guidance and zero-downtime migrations.
+                Secure, reliable hosting and proactive support so you're always online. Transparent Hostinger plan matching and zero-downtime migrations.
               </p>
             </div>
 
             {/* 03: SEO & digital marketing */}
             <div
               onClick={() => onNavigate('contact')}
-              className="group space-y-3 cursor-pointer p-4 -mx-4 rounded-xl hover:bg-white/50 transition-colors"
+              className="group space-y-3 cursor-pointer p-5 -mx-5 rounded-xl hover:bg-white/60 transition-colors border border-transparent hover:border-[#E2DDD2]"
             >
               <div className="text-sm font-mono font-bold text-[#C86445]">03</div>
               <h3 className="text-lg font-bold text-[#153E43] group-hover:text-[#C86445] transition-colors flex items-center justify-between">
@@ -142,7 +150,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
                 <span className="text-[#153E43] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
               </h3>
               <p className="text-sm text-[#153E43]/75 leading-relaxed">
-                More visibility, more qualified traffic, more growth. Strategic search positioning and performance campaigns.
+                Higher organic search visibility, qualified inbound leads, and real ROI. Strategic search positioning and technical performance optimization.
               </p>
             </div>
           </div>
@@ -165,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               onClick={() => onNavigate('about')}
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#153E43] hover:text-[#C86445] transition-colors cursor-pointer self-start sm:self-auto"
             >
-              <span>View all work</span>
+              <span>View all work &amp; case studies</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -178,11 +186,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               className="group bg-white rounded-2xl border border-[#E2DDD2] overflow-hidden p-6 hover:shadow-xl hover:border-[#153E43]/30 transition-all cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative flex items-center justify-center p-6 border border-[#DDD5C6]">
-                  {/* Architectural Graphic representation */}
-                  <div className="w-full h-full bg-[#153E43] rounded-lg flex flex-col justify-end p-4 text-[#F3EFE6]">
-                    <span className="text-[10px] font-mono tracking-widest uppercase opacity-75">Architecture Studio</span>
-                    <span className="text-sm font-bold">Rivermere Modern Space</span>
+                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
+                  <img
+                    src="/src/assets/images/work_rivermere_arch_1792279543490.jpg"
+                    alt="Rivermere Modern Architecture Studio"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3.5">
+                    <span className="text-[11px] font-mono font-bold text-white tracking-wider uppercase">
+                      Architecture Studio
+                    </span>
                   </div>
                 </div>
                 <div className="text-xs font-mono text-[#C86445] font-semibold">Brand &amp; Website</div>
@@ -195,48 +209,60 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               </div>
             </div>
 
-            {/* Project 2: Evergreen Goods */}
+            {/* Project 2: emarket247.shop */}
             <div
               onClick={() => onNavigate('about')}
               className="group bg-white rounded-2xl border border-[#E2DDD2] overflow-hidden p-6 hover:shadow-xl hover:border-[#153E43]/30 transition-all cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative flex items-center justify-center p-6 border border-[#DDD5C6]">
-                  {/* Sustainable goods mockup */}
-                  <div className="w-full h-full bg-[#20494E] rounded-lg flex flex-col justify-end p-4 text-[#F3EFE6]">
-                    <span className="text-[10px] font-mono tracking-widest uppercase opacity-75">eCommerce &amp; Retail</span>
-                    <span className="text-sm font-bold">Evergreen Goods Store</span>
+                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
+                  <img
+                    src="/src/assets/images/work_evergreen_goods_1792279543971.jpg"
+                    alt="emarket247.shop eCommerce Platform"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3.5">
+                    <span className="text-[11px] font-mono font-bold text-white tracking-wider uppercase">
+                      AI Vibe Coded Store
+                    </span>
                   </div>
                 </div>
-                <div className="text-xs font-mono text-[#C86445] font-semibold">Website &amp; Hosting</div>
+                <div className="text-xs font-mono text-[#C86445] font-semibold">eCommerce &amp; AI Tools</div>
                 <h4 className="text-lg font-bold text-[#153E43] group-hover:text-[#C86445] transition-colors mt-1">
-                  Evergreen Goods →
+                  emarket247.shop →
                 </h4>
                 <p className="text-xs text-[#153E43]/70 mt-2 leading-relaxed">
-                  High-converting WooCommerce store with sub-second page loads, automated inventory sync, and dedicated hosting.
+                  High-speed e-commerce retail portal engineered with AI vibe coding, rapid microservices, dynamic inventory, and sub-second checkout.
                 </p>
               </div>
             </div>
 
-            {/* Project 3: Lumen Atelier / Sunlitbd */}
+            {/* Project 3: Sunlitbd.com */}
             <div
               onClick={() => onNavigate('about')}
               className="group bg-white rounded-2xl border border-[#E2DDD2] overflow-hidden p-6 hover:shadow-xl hover:border-[#153E43]/30 transition-all cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative flex items-center justify-center p-6 border border-[#DDD5C6]">
-                  {/* Home & Interior Production Client */}
-                  <div className="w-full h-full bg-[#153E43] rounded-lg flex flex-col justify-end p-4 text-[#F3EFE6] border-l-4 border-[#C86445]">
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-amber-300">Production Client</span>
-                    <span className="text-sm font-bold">Sunlitbd.com (Dhaka)</span>
+                <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
+                  <img
+                    src="/src/assets/images/work_sunlitbd_interior_1792279543981.jpg"
+                    alt="Sunlitbd.com Interior Design & MEP Infrastructure"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3.5">
+                    <span className="text-[11px] font-mono font-bold text-white tracking-wider uppercase">
+                      Corporate Client (Dhaka)
+                    </span>
                   </div>
                 </div>
-                <div className="text-xs font-mono text-[#C86445] font-semibold">Digital Platform &amp; Marketing</div>
+                <div className="text-xs font-mono text-[#C86445] font-semibold">Interior Design &amp; MEP Infrastructure</div>
                 <h4 className="text-lg font-bold text-[#153E43] group-hover:text-[#C86445] transition-colors mt-1">
                   Sunlitbd.com →
                 </h4>
                 <p className="text-xs text-[#153E43]/70 mt-2 leading-relaxed">
-                  Bangladeshi interior design &amp; home services portal with live quotation engine and high-availability Singapore hosting.
+                  Bangladeshi interior design &amp; MEP engineering firm portfolio (IFIC Bank projects) with 96/100 mobile speed and LiteSpeed infrastructure.
                 </p>
               </div>
             </div>
@@ -379,129 +405,112 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
           {/* Quick Tools Access Bar */}
           <div className="pt-6 border-t border-[#E2DDD2] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <button
-              onClick={() => onNavigate('tools')}
-              className="p-4 rounded-xl bg-[#F3EFE6] border border-[#E2DDD2] hover:border-[#153E43] transition-all text-left cursor-pointer group"
+              onClick={() => onNavigate('renewal-costs')}
+              className="p-4 rounded-xl border border-[#E2DDD2] hover:border-[#153E43] bg-[#F3EFE6]/50 hover:bg-[#F3EFE6] transition-all text-left flex items-start gap-3 cursor-pointer group"
             >
-              <div className="text-xs font-mono font-bold text-[#C86445]">TOOL 01</div>
-              <h4 className="text-sm font-bold text-[#153E43] mt-1 group-hover:text-[#C86445] transition-colors">
-                TCO Renewal Calculator →
-              </h4>
-              <p className="text-[11px] text-[#153E43]/70 mt-1">Estimate exact 1–6 year costs vs GoDaddy.</p>
+              <div className="p-2 bg-white rounded-lg border border-[#E2DDD2] text-[#153E43] group-hover:bg-[#153E43] group-hover:text-white transition-colors">
+                <Sliders className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#153E43]">3-Year Cost Calculator</div>
+                <div className="text-[11px] text-[#153E43]/70 mt-0.5">Expose hidden renewal rate hikes</div>
+              </div>
             </button>
 
             <button
               onClick={() => onNavigate('tools')}
-              className="p-4 rounded-xl bg-[#F3EFE6] border border-[#E2DDD2] hover:border-[#153E43] transition-all text-left cursor-pointer group"
+              className="p-4 rounded-xl border border-[#E2DDD2] hover:border-[#153E43] bg-[#F3EFE6]/50 hover:bg-[#F3EFE6] transition-all text-left flex items-start gap-3 cursor-pointer group"
             >
-              <div className="text-xs font-mono font-bold text-[#C86445]">TOOL 02</div>
-              <h4 className="text-sm font-bold text-[#153E43] mt-1 group-hover:text-[#C86445] transition-colors">
-                Server Resource Sizer →
-              </h4>
-              <p className="text-[11px] text-[#153E43]/70 mt-1">Calculate RAM/CPU for traffic volume.</p>
+              <div className="p-2 bg-white rounded-lg border border-[#E2DDD2] text-[#153E43] group-hover:bg-[#153E43] group-hover:text-white transition-colors">
+                <Activity className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#153E43]">30-Second Plan Matcher</div>
+                <div className="text-[11px] text-[#153E43]/70 mt-0.5">Answer 3 questions for optimal tier</div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => onNavigate('tools')}
+              className="p-4 rounded-xl border border-[#E2DDD2] hover:border-[#153E43] bg-[#F3EFE6]/50 hover:bg-[#F3EFE6] transition-all text-left flex items-start gap-3 cursor-pointer group"
+            >
+              <div className="p-2 bg-white rounded-lg border border-[#E2DDD2] text-[#153E43] group-hover:bg-[#153E43] group-hover:text-white transition-colors">
+                <Globe className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#153E43]">Global TTFB Telemetry</div>
+                <div className="text-[11px] text-[#153E43]/70 mt-0.5">Test real node latency across continents</div>
+              </div>
             </button>
 
             <button
               onClick={() => onNavigate('migration')}
-              className="p-4 rounded-xl bg-[#F3EFE6] border border-[#E2DDD2] hover:border-[#153E43] transition-all text-left cursor-pointer group"
+              className="p-4 rounded-xl border border-[#E2DDD2] hover:border-[#153E43] bg-[#F3EFE6]/50 hover:bg-[#F3EFE6] transition-all text-left flex items-start gap-3 cursor-pointer group"
             >
-              <div className="text-xs font-mono font-bold text-[#C86445]">TOOL 03</div>
-              <h4 className="text-sm font-bold text-[#153E43] mt-1 group-hover:text-[#C86445] transition-colors">
-                6-Step Migration Guide →
-              </h4>
-              <p className="text-[11px] text-[#153E43]/70 mt-1">Zero downtime WordPress transfer checklist.</p>
-            </button>
-
-            <button
-              onClick={() => onNavigate('deals')}
-              className="p-4 rounded-xl bg-[#F3EFE6] border border-[#E2DDD2] hover:border-[#153E43] transition-all text-left cursor-pointer group"
-            >
-              <div className="text-xs font-mono font-bold text-[#C86445]">TOOL 04</div>
-              <h4 className="text-sm font-bold text-[#153E43] mt-1 group-hover:text-[#C86445] transition-colors">
-                Verified Coupons Hub →
-              </h4>
-              <p className="text-[11px] text-[#153E43]/70 mt-1">Active October promo codes (HOSTMARC).</p>
+              <div className="p-2 bg-white rounded-lg border border-[#E2DDD2] text-[#153E43] group-hover:bg-[#153E43] group-hover:text-white transition-colors">
+                <Zap className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#153E43]">Zero-Downtime Migration</div>
+                <div className="text-[11px] text-[#153E43]/70 mt-0.5">Step-by-step cPanel to hPanel checklist</div>
+              </div>
             </button>
           </div>
         </div>
       </section>
 
-      {/* 5. WORKING PROCESS SECTION (from Brand Foundation) */}
+      {/* 5. LIVE SERVER TELEMETRY HIGHLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8 border-t border-[#E2DDD2] pt-12">
-          <div className="max-w-2xl space-y-2">
+        <div className="bg-[#153E43] rounded-3xl p-8 sm:p-12 text-[#F3EFE6] space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#255D64] pb-6">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C86445]">
+                HARDWARE BENCHMARKS
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">
+                Live Global Response Times (TTFB)
+              </h2>
+            </div>
+            <p className="text-xs text-[#F3EFE6]/70 max-w-md">
+              Tested on production LiteSpeed Enterprise servers running WordPress 6.7 with WooCommerce under active cache.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {BENCHMARK_REGIONS.slice(0, 6).map((region) => (
+              <div
+                key={region.region}
+                className="bg-[#0D282C] border border-[#255D64] rounded-xl p-4 space-y-2"
+              >
+                <div className="flex items-center justify-between text-xs text-[#F3EFE6]/70">
+                  <span className="font-semibold text-[#F3EFE6]">{region.region}</span>
+                  <span className="text-sm">{region.flag}</span>
+                </div>
+                <div className="text-2xl font-extrabold font-mono text-[#F3EFE6]">
+                  {region.hostingerTtfb}ms
+                </div>
+                <div className="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                  <span>●</span>
+                  <span>{region.hostingerTtfb < 120 ? 'Optimal (A+)' : 'Fast (A)'}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. COMPARISON TABLE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-6">
+          <div className="space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C86445]">
-              HOW WE WORK
+              DIRECT COMPARISON
             </span>
-            <h2 className="text-3xl font-extrabold text-[#153E43] tracking-tight">
-              A disciplined, transparent process.
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#153E43] tracking-tight">
+              Hostinger vs. Traditional Shared Hosts
             </h2>
-            <p className="text-sm text-[#153E43]/75 leading-relaxed">
-              Whether building a new platform or transitioning your server infrastructure, we follow an engineering-first roadmap with clear milestones.
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-[#E2DDD2] space-y-2">
-              <span className="font-mono text-sm font-bold text-[#C86445]">01. Discovery</span>
-              <h4 className="text-base font-bold text-[#153E43]">Scope &amp; Architecture</h4>
-              <p className="text-xs text-[#153E43]/70 leading-relaxed">
-                We clarify your business objectives, target audience, traffic expectations, and hosting prerequisites before writing code.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#E2DDD2] space-y-2">
-              <span className="font-mono text-sm font-bold text-[#C86445]">02. Design</span>
-              <h4 className="text-base font-bold text-[#153E43]">Restrained Craftsmanship</h4>
-              <p className="text-xs text-[#153E43]/70 leading-relaxed">
-                Clean, accessible layouts with domain-authentic typography and tactile materials. Zero generic templates.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#E2DDD2] space-y-2">
-              <span className="font-mono text-sm font-bold text-[#C86445]">03. Build</span>
-              <h4 className="text-base font-bold text-[#153E43]">Fast, Clean Execution</h4>
-              <p className="text-xs text-[#153E43]/70 leading-relaxed">
-                Semantic HTML, responsive CSS, and minimal JavaScript overhead for instantaneous Core Web Vitals.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#E2DDD2] space-y-2">
-              <span className="font-mono text-sm font-bold text-[#C86445]">04. Launch</span>
-              <h4 className="text-base font-bold text-[#153E43]">Zero-Downtime Deployment</h4>
-              <p className="text-xs text-[#153E43]/70 leading-relaxed">
-                Staging verification, DNS TTL management, automated SSL installation, and LiteSpeed caching optimization.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. CALL TO ACTION / ENQUIRY SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#153E43] text-white rounded-3xl p-8 sm:p-14 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-xl text-center md:text-left">
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              Ready to make your mark online?
-            </h3>
-            <p className="text-sm text-white/80 leading-relaxed">
-              Tell us about your upcoming website project, or ask us for hosting guidance. We respond to inquiries within 4 business hours.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
-            <button
-              onClick={() => onNavigate('contact')}
-              className="w-full sm:w-auto px-6 py-3.5 bg-[#C86445] hover:bg-[#B05337] text-white font-semibold text-sm rounded-lg shadow-sm transition-all cursor-pointer text-center"
-            >
-              Start your project
-            </button>
-            <button
-              onClick={onOpenModal}
-              className="w-full sm:w-auto px-6 py-3.5 border border-white/30 hover:border-white text-white font-semibold text-sm rounded-lg transition-all cursor-pointer text-center"
-            >
-              Explore Hosting Deals
-            </button>
-          </div>
+          <ComparisonTable onOpenModal={onOpenModal} />
         </div>
       </section>
     </div>

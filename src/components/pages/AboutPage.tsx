@@ -82,7 +82,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           {/* Bio text */}
           <div className="lg:col-span-8 space-y-4 text-[#153E43]/85 text-sm sm:text-base leading-relaxed">
             <div className="inline-block px-2.5 py-0.5 rounded bg-[#C86445]/10 text-[#C86445] text-xs font-mono font-bold uppercase tracking-wider mb-1">
-              Farhan Momen - Senior Web Infrastructure Specialist
+              Farhan Momen - Senior Web Infrastructure &amp; AI Vibe Coding Specialist
             </div>
             
             <p className="text-base sm:text-lg font-medium text-[#153E43]">
@@ -90,7 +90,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
             </p>
             
             <p>
-              He holds degrees in computer science and works with international development teams across South Asia, North America, and Europe.
+              In addition to deep systems infrastructure, Farhan specializes in modern <strong>AI vibe coding</strong> to rapidly architect and build high-performance websites, custom web applications, diagnostic tools, and scalable WordPress platforms for businesses and creators worldwide.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#E2DDD2]/80">
@@ -199,9 +199,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Case Study 1: Sunlitbd.com */}
-          <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs hover:border-[#153E43]/40 transition-all flex flex-col justify-between">
+          <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 space-y-6 shadow-xs hover:border-[#153E43]/40 transition-all flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C86445] bg-[#C86445]/10 px-2.5 py-1 rounded">
@@ -213,18 +213,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
               </div>
 
               <div>
-                <h3 className="text-2xl font-black text-[#153E43]">Sunlitbd.com</h3>
-                <p className="text-sm text-[#153E43]/85 leading-relaxed mt-2">
+                <h3 className="text-xl font-black text-[#153E43]">Sunlitbd.com</h3>
+                <p className="text-xs text-[#153E43]/85 leading-relaxed mt-2">
                   Corporate website &amp; project portfolio for a premier interior design and MEP infrastructure engineering firm (handling IFIC Bank and institutional projects).
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#F8F5EE] border border-[#E2DDD2] space-y-1.5">
-                <div className="text-[11px] font-mono font-bold text-[#153E43]/70 uppercase">
+              <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E2DDD2] space-y-1">
+                <div className="text-[10px] font-mono font-bold text-[#153E43]/70 uppercase">
                   Technical Stack:
                 </div>
                 <div className="text-xs font-mono text-[#153E43] font-semibold">
-                  WordPress · LiteSpeed · Optimized WebP Pipeline (96/100 Mobile Speed)
+                  WordPress · LiteSpeed · Optimized WebP Pipeline
                 </div>
               </div>
             </div>
@@ -234,16 +234,58 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
                 href="https://sunlitbd.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#153E43] hover:text-[#C86445] transition-colors group"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#153E43] hover:text-[#C86445] transition-colors group"
               >
                 <span>Inspect Live Site (sunlitbd.com)</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>
 
-          {/* Case Study 2: Ural-Travel */}
-          <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs hover:border-[#153E43]/40 transition-all flex flex-col justify-between">
+          {/* Case Study 2: emarket247.shop */}
+          <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 space-y-6 shadow-xs hover:border-[#153E43]/40 transition-all flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C86445] bg-[#C86445]/10 px-2.5 py-1 rounded">
+                  AI Vibe Coded Store
+                </span>
+                <span className="text-xs font-mono text-emerald-800 font-bold bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded">
+                  Sub-Second Load
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-black text-[#153E43]">emarket247.shop</h3>
+                <p className="text-xs text-[#153E43]/85 leading-relaxed mt-2">
+                  High-speed e-commerce retail store engineered with AI vibe coding, rapid microservices, dynamic inventory management, and sub-second checkout.
+                </p>
+              </div>
+
+              <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E2DDD2] space-y-1">
+                <div className="text-[10px] font-mono font-bold text-[#153E43]/70 uppercase">
+                  Technical Stack:
+                </div>
+                <div className="text-xs font-mono text-[#153E43] font-semibold">
+                  AI Vibe Coding · Fast Edge API · Dynamic Catalog
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-[#E2DDD2]">
+              <a
+                href="https://emarket247.shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#153E43] hover:text-[#C86445] transition-colors group"
+              >
+                <span>Inspect Live Store (emarket247.shop)</span>
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          {/* Case Study 3: Ural-Travel */}
+          <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 space-y-6 shadow-xs hover:border-[#153E43]/40 transition-all flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C86445] bg-[#C86445]/10 px-2.5 py-1 rounded">
@@ -255,14 +297,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
               </div>
 
               <div>
-                <h3 className="text-2xl font-black text-[#153E43]">Ural-Travel</h3>
-                <p className="text-sm text-[#153E43]/85 leading-relaxed mt-2">
+                <h3 className="text-xl font-black text-[#153E43]">Ural-Travel</h3>
+                <p className="text-xs text-[#153E43]/85 leading-relaxed mt-2">
                   High-speed travel booking guide, flight price tracking, and visa checklist authority portal built with modern AI vibe coding.
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#F8F5EE] border border-[#E2DDD2] space-y-1.5">
-                <div className="text-[11px] font-mono font-bold text-[#153E43]/70 uppercase">
+              <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#E2DDD2] space-y-1">
+                <div className="text-[10px] font-mono font-bold text-[#153E43]/70 uppercase">
                   Technical Stack:
                 </div>
                 <div className="text-xs font-mono text-[#153E43] font-semibold">
@@ -276,10 +318,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
                 href="https://ural-travel.pages.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#153E43] hover:text-[#C86445] transition-colors group"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#153E43] hover:text-[#C86445] transition-colors group"
               >
                 <span>Inspect Live Portal (ural-travel.pages.dev)</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>

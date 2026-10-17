@@ -26,13 +26,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAffiliateModal
             <p className="text-white/70 text-sm leading-relaxed max-w-sm mt-3">
               Websites, hosting guidance, and digital marketing. We help modern businesses launch with clarity and grow with purpose.
             </p>
-            <div className="flex items-center gap-3 text-xs text-white/60 pt-2 font-mono">
-              <span className="text-[#C86445] font-bold">WEBSITES</span>
-              <span>/</span>
-              <span className="text-white/90 font-bold">HOSTING</span>
-              <span>/</span>
-              <span className="text-[#C86445] font-bold">MARKETING</span>
-            </div>
             <div className="text-xs text-white/50 pt-1">
               Lead Systems Engineer: Farhan Momen · Dhaka, Bangladesh
             </div>

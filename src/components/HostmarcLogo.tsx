@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface HostmarcLogoProps {
   className?: string;
@@ -13,12 +13,29 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
   color = 'petrol',
   height = 32,
 }) => {
+  const [imageError, setImageError] = useState(false);
+
   const fillColor =
     color === 'white'
       ? '#FFFFFF'
       : color === 'limestone'
       ? '#F3EFE6'
       : '#153E43';
+
+  // If user has uploaded logo_hostmarc.png or logo.png to /public, render it seamlessly
+  if (!imageError && color === 'petrol' && variant === 'full') {
+    return (
+      <div className={`inline-flex items-center ${className}`}>
+        <img
+          src="/logo_hostmarc.png"
+          alt="HostMarc"
+          style={{ height: `${height}px`, width: 'auto' }}
+          className="object-contain"
+          onError={() => setImageError(true)}
+        />
+      </div>
+    );
+  }
 
   if (variant === 'symbol-only') {
     return (
@@ -31,14 +48,14 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
         aria-label="HostMarc symbol"
       >
         {/* Geometric Monolithic Faceted H Symbol from approved brand mark */}
-        {/* Left vertical pillar with top/bottom angled facets */}
+        {/* Left vertical pillar */}
         <path
-          d="M 12 18 L 44 8 L 44 102 L 12 92 Z"
+          d="M 14 18 L 44 8 L 44 102 L 14 92 Z"
           fill={fillColor}
         />
-        {/* Right vertical pillar with top/bottom angled facets */}
+        {/* Right vertical pillar */}
         <path
-          d="M 66 8 L 98 18 L 98 92 L 66 102 Z"
+          d="M 66 8 L 96 18 L 96 92 L 66 102 Z"
           fill={fillColor}
         />
         {/* Central connecting crossbar */}
@@ -53,7 +70,7 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
     );
   }
 
-  // Full Horizontal Lockup: Symbol + Lowercase 'hostmarc' wordmark
+  // Full Horizontal Lockup: Symbol + Lowercase 'hostmarc' wordmark in Plus Jakarta Sans
   return (
     <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
       {/* Symbol */}
@@ -84,13 +101,13 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
 
       {/* Exact lowercase wordmark: "hostmarc" */}
       <span
-        className="font-bold tracking-tight lowercase"
+        className="font-extrabold tracking-tight lowercase"
         style={{
           color: fillColor,
-          fontSize: `${Math.round(height * 0.82)}px`,
-          letterSpacing: '-0.03em',
+          fontSize: `${Math.round(height * 0.84)}px`,
+          letterSpacing: '-0.035em',
           lineHeight: 1,
-          fontFamily: "'Manrope', sans-serif",
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
         }}
       >
         hostmarc

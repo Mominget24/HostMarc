@@ -1,6 +1,6 @@
 {
-  "name": "HostMarc - High Performance Hosting Reviews & Benchmarks",
-  "description": "In-depth Hostinger reviews, real server benchmarks, zero-downtime migration guides, renewal cost calculators, and verified promo deals by Farhan Momen.",
+  "name": "HostMarc - Websites, Hosting & Growth for Ambitious Businesses",
+  "description": "HostMarc pairs bespoke web engineering with independent server benchmarks, hosting guidance, and transparent renewal cost calculators by Farhan Momen.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
