@@ -1,0 +1,6 @@
+{
+  "name": "HostMarc - High Performance Hosting Reviews & Benchmarks",
+  "description": "In-depth Hostinger reviews, real server benchmarks, zero-downtime migration guides, renewal cost calculators, and verified promo deals by Farhan Momen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
