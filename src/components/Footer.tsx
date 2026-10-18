@@ -18,7 +18,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAffiliateModal
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div>
-              <HostmarcLogo height={32} color="white" />
+              <HostmarcLogo
+                height={42}
+                color="white"
+                className="flex items-center"
+                imgClassName="h-10 sm:h-11 w-auto max-w-[200px]"
+              />
               <p className="text-xs font-mono font-bold tracking-widest text-[#C86445] uppercase mt-2">
                 MAKE YOUR MARK ONLINE
               </p>

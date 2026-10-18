@@ -52,14 +52,19 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Top Bar Contract: Zone 1 (Wordmark) — Zone 2 (Nav Links) — Zone 3 (Primary Action) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
-        {/* Zone 1: Logo matching Logo Hostmarc.png */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6 md:gap-8">
+        {/* Zone 1: Brand Identity & Logo matching Logo Hostmarc.png */}
         <button
           onClick={() => handleLinkClick('home')}
-          className="cursor-pointer focus:outline-none shrink-0 hover:opacity-90 transition-opacity"
+          className="cursor-pointer focus:outline-none shrink-0 flex items-center py-1 hover:opacity-95 transition-opacity group"
           aria-label="HostMarc Home"
         >
-          <HostmarcLogo height={32} color="petrol" />
+          <HostmarcLogo
+            height={46}
+            color="petrol"
+            className="flex items-center"
+            imgClassName="h-10 sm:h-11 md:h-12 w-auto max-w-[210px] sm:max-w-[240px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.06)]"
+          />
         </button>
 
         {/* Zone 2: Navigation Links (Clean text with hover underlines) */}

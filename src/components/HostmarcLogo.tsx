@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 interface HostmarcLogoProps {
   className?: string;
+  imgClassName?: string;
   variant?: 'full' | 'symbol-only';
   color?: 'petrol' | 'white' | 'limestone';
   height?: number;
@@ -9,9 +10,10 @@ interface HostmarcLogoProps {
 
 export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
   className = '',
+  imgClassName = '',
   variant = 'full',
   color = 'petrol',
-  height = 32,
+  height = 44,
 }) => {
   const [imageError, setImageError] = useState(false);
 
@@ -22,15 +24,22 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
       ? '#F3EFE6'
       : '#153E43';
 
-  // If user has uploaded logo_hostmarc.png or logo.png to /public, render it seamlessly
-  if (!imageError && color === 'petrol' && variant === 'full') {
+  // Render uploaded logo image seamlessly for both petrol and white variants
+  if (!imageError && variant === 'full') {
+    const filterClass =
+      color === 'white'
+        ? 'brightness-0 invert'
+        : color === 'limestone'
+        ? 'brightness-0 invert opacity-90'
+        : '';
+
     return (
       <div className={`inline-flex items-center ${className}`}>
         <img
           src="/logo_hostmarc.png"
           alt="HostMarc"
-          style={{ height: `${height}px`, width: 'auto' }}
-          className="object-contain"
+          style={height ? { height: `${height}px`, width: 'auto' } : undefined}
+          className={`object-contain object-left select-none transition-opacity duration-200 ${filterClass} ${imgClassName}`}
           onError={() => setImageError(true)}
         />
       </div>
