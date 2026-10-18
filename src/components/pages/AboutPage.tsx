@@ -13,7 +13,10 @@ import {
   Globe2,
   Sparkles,
   Terminal,
-  Zap
+  Zap,
+  ShoppingBag,
+  Users,
+  Award
 } from 'lucide-react';
 
 interface AboutPageProps {
@@ -42,69 +45,176 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
       </div>
 
       {/* 2. Farhan Momen Profile Section */}
-      <div className="bg-white border border-[#E2DDD2] rounded-2xl p-6 sm:p-10 shadow-xs relative overflow-hidden">
-        {/* Subtle background circuit accent */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#153E43]/5 to-transparent rounded-bl-full pointer-events-none" />
+      <div className="bg-white border border-[#E2DDD2] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+        {/* Subtle background ambient glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#153E43]/5 via-[#C86445]/5 to-transparent rounded-bl-full pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
-          {/* Avatar & Badges */}
-          <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-4">
-            <div className="relative">
-              <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-[#153E43] p-1.5 shadow-xl shadow-[#153E43]/15 border-2 border-[#153E43]">
-                <div className="w-full h-full bg-[#1A4B51] rounded-[14px] flex flex-col items-center justify-center text-[#F3EFE6] border border-white/20">
-                  <span className="text-4xl font-black font-mono tracking-tighter">FM</span>
-                  <span className="text-[10px] font-mono tracking-widest text-[#C86445] uppercase font-bold mt-1">
-                    LAB DIRECTOR
-                  </span>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
+          
+          {/* Column 1: Portrait Photo & Credential Highlights (lg:col-span-5) */}
+          <div className="lg:col-span-5 flex flex-col space-y-5">
+            {/* Image Card Frame */}
+            <div className="relative group rounded-2xl overflow-hidden border-2 border-[#153E43]/15 shadow-xl shadow-[#153E43]/10 bg-[#153E43]">
+              <img
+                src="/images/farhan_momen.png"
+                alt="Farhan Momen - Senior Web Infrastructure Specialist & Testing Director"
+                className="w-full h-[420px] sm:h-[480px] lg:h-[480px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/Farhan Momeen.png';
+                }}
+              />
+              
+              {/* Bottom gradient overlay for readability of name & role badge */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2225] via-transparent to-transparent opacity-80 pointer-events-none" />
+              
+              {/* Badges on image */}
+              <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#153E43]/90 text-white backdrop-blur-md text-[11px] font-mono font-bold tracking-wider uppercase border border-white/20 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Founder &amp; Testing Director
+                </span>
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-[#C86445] text-white p-2 rounded-xl shadow-md" title="Verified Web Infrastructure Specialist">
-                <Terminal className="w-4 h-4" />
+              
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <p className="text-2xl sm:text-3xl font-black font-sans leading-tight">
+                  Farhan Momen
+                </p>
+                <p className="text-xs text-[#C86445] font-mono font-bold uppercase tracking-wider mt-1">
+                  Senior Web Infrastructure Specialist &amp; Testing Director
+                </p>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-black text-[#153E43]">Farhan Momen</h2>
-              <p className="text-xs text-[#C86445] font-mono font-bold mt-1 uppercase tracking-wider">
-                Senior Web Infrastructure Specialist &amp; Testing Director
-              </p>
-              <div className="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
-                <span className="inline-flex items-center text-[11px] font-mono bg-[#F3EFE6] text-[#153E43] px-2.5 py-1 rounded border border-[#E2DDD2] font-semibold">
-                  10+ Yrs Server Tuning
-                </span>
-                <span className="inline-flex items-center text-[11px] font-mono bg-[#F3EFE6] text-[#153E43] px-2.5 py-1 rounded border border-[#E2DDD2] font-semibold">
-                  Dhaka &amp; Global Nodes
-                </span>
+            {/* Quick Action & Official Portfolio Card */}
+            <div className="bg-[#F8F5EE] border border-[#E2DDD2] rounded-xl p-4 sm:p-5 space-y-3.5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-xs font-mono font-bold text-[#153E43] uppercase tracking-wider">
+                    Personal Portfolio
+                  </div>
+                  <div className="text-[11px] text-[#153E43]/70 font-mono">
+                    Live works &amp; client builds
+                  </div>
+                </div>
+                <a
+                  href="https://marc.pages.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#153E43] hover:bg-[#1A4B51] text-[#F3EFE6] text-xs font-mono font-bold tracking-wide transition-all shadow-xs hover:shadow-md"
+                >
+                  <span>marc.pages.dev</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#C86445]" />
+                </a>
               </div>
+
+              <div className="pt-2.5 border-t border-[#E2DDD2] flex items-center justify-between text-xs text-[#153E43]/80 font-mono">
+                <span className="inline-flex items-center gap-1">
+                  <Award className="w-3.5 h-3.5 text-[#C86445]" />
+                  <span>Gaotek Intern Alum</span>
+                </span>
+                <span className="text-[#153E43] font-bold">10+ Yrs Web Experience</span>
+              </div>
+            </div>
+
+            {/* Freelancer Network Pill */}
+            <div className="p-3.5 rounded-xl bg-white border border-[#E2DDD2] text-xs text-[#153E43]/85 leading-relaxed flex items-start gap-2.5">
+              <Users className="w-4 h-4 text-[#C86445] shrink-0 mt-0.5" />
+              <span>
+                <strong>One-Person Agency with a Collective Reach:</strong> I provide single-point accountability, backed by a vetted circle of specialist freelancers available on demand for custom UI, deep APIs, and niche marketing.
+              </span>
             </div>
           </div>
 
-          {/* Bio text */}
-          <div className="lg:col-span-8 space-y-4 text-[#153E43]/85 text-sm sm:text-base leading-relaxed">
-            <div className="inline-block px-2.5 py-0.5 rounded bg-[#C86445]/10 text-[#C86445] text-xs font-mono font-bold uppercase tracking-wider mb-1">
-              Farhan Momen - Senior Web Infrastructure &amp; AI Vibe Coding Specialist
+          {/* Column 2: Biography & Philosophy (lg:col-span-7) */}
+          <div className="lg:col-span-7 space-y-5 text-[#153E43]/90 text-sm sm:text-base leading-relaxed">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#C86445]/10 text-[#C86445] text-xs font-mono font-bold uppercase tracking-wider">
+              <Terminal className="w-3.5 h-3.5" />
+              Self-Made Developer · Infrastructure Specialist
             </div>
+
+            <h2 className="text-2xl sm:text-3xl font-black text-[#153E43] tracking-tight font-sans leading-tight">
+              Helping Small Businesses Thrive with High-Speed Web Infrastructure &amp; E-Commerce
+            </h2>
             
-            <p className="text-base sm:text-lg font-medium text-[#153E43]">
-              With over 10 years of hands-on experience tuning high-load web architectures, Linux server kernels, LiteSpeed web engines, and MySQL query performance, Farhan leads the technical evaluation laboratory at HostMarc.
+            <p className="text-base sm:text-lg font-medium text-[#153E43] leading-relaxed">
+              I am a freelance website developer who entered this industry without a formal academic background — learning every layer of web systems through relentless curiosity, direct experimentation, and over 10 years of real-world trials.
             </p>
             
             <p>
-              In addition to deep systems infrastructure, Farhan specializes in modern <strong>AI vibe coding</strong> to rapidly architect and build high-performance websites, custom web applications, diagnostic tools, and scalable WordPress platforms for businesses and creators worldwide.
+              Throughout my journey, I have had the privilege of collaborating with numerous international clients across diverse industries, in addition to completing an intensive internship at <strong>Gaotek</strong> where I conducted rigorous quality testing and infrastructure verification.
             </p>
 
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#153E43]/5 border border-[#153E43]/15 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#C86445]">
+                <ShoppingBag className="w-4 h-4" />
+                The E-Commerce Passion
+              </div>
+              <p className="text-sm sm:text-base text-[#153E43] font-medium leading-relaxed">
+                Building e-commerce stores is my genuine passion for small businesses. I feel extremely delightful to support an independent business thrive online — helping them build brand credibility, launch smooth checkouts, and generate real sales, income, and scalable digital marketing traction.
+              </p>
+            </div>
+
+            <p>
+              Experience has proven one undeniable truth: <em>for authentic business stimulation and sustained customer retention, a high-speed hosting foundation and solid domain infrastructure are crucial.</em> Sluggish page loads destroy conversion rates regardless of how much you invest in marketing.
+            </p>
+
+            <p>
+              That conviction led to the founding of <strong>HostMarc</strong>: an independent testing lab dedicated to benchmarking real server hardware, NVMe throughput, LiteSpeed caching, and global response times so business owners can invest with confidence.
+            </p>
+
+            {/* Featured Projects Bar */}
+            <div className="pt-2">
+              <div className="text-xs font-mono font-bold text-[#153E43] uppercase tracking-wider mb-2.5">
+                Recent Featured Work &amp; Case Studies:
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                <a
+                  href="https://sunlitbd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F8F5EE] border border-[#E2DDD2] hover:border-[#153E43] text-xs font-mono font-bold text-[#153E43] transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C86445]" />
+                  sunlitbd.com (Interior Design)
+                  <ExternalLink className="w-3 h-3 text-[#153E43]/60" />
+                </a>
+
+                <a
+                  href="https://emarket247.shop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F8F5EE] border border-[#E2DDD2] hover:border-[#153E43] text-xs font-mono font-bold text-[#153E43] transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#153E43]" />
+                  emarket247.shop (E-Commerce)
+                  <ExternalLink className="w-3 h-3 text-[#153E43]/60" />
+                </a>
+
+                <a
+                  href="https://marc.pages.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#153E43] text-[#F3EFE6] text-xs font-mono font-bold transition-opacity hover:opacity-95"
+                >
+                  <span>marc.pages.dev (Portfolio)</span>
+                  <ExternalLink className="w-3 h-3 text-[#C86445]" />
+                </a>
+              </div>
+            </div>
+
+            {/* Metrics Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#E2DDD2]/80">
               <div className="p-3 rounded-lg bg-[#F8F5EE] border border-[#E2DDD2]">
-                <div className="text-xs text-[#153E43]/70 font-mono">Specialization</div>
-                <div className="text-sm font-bold text-[#153E43] mt-0.5">LiteSpeed &amp; NVMe</div>
+                <div className="text-xs text-[#153E43]/70 font-mono">Hands-on Mastery</div>
+                <div className="text-sm font-bold text-[#153E43] mt-0.5">10+ Yrs Server Tuning</div>
               </div>
               <div className="p-3 rounded-lg bg-[#F8F5EE] border border-[#E2DDD2]">
-                <div className="text-xs text-[#153E43]/70 font-mono">Active Telemetry</div>
-                <div className="text-sm font-bold text-[#153E43] mt-0.5">7 Global Probes</div>
+                <div className="text-xs text-[#153E43]/70 font-mono">Delivery Model</div>
+                <div className="text-sm font-bold text-[#153E43] mt-0.5">1-Person + Network</div>
               </div>
               <div className="p-3 rounded-lg bg-[#F8F5EE] border border-[#E2DDD2] col-span-2 sm:col-span-1">
-                <div className="text-xs text-[#153E43]/70 font-mono">Benchmark Focus</div>
-                <div className="text-sm font-bold text-[#153E43] mt-0.5">Sub-150ms TTFB</div>
+                <div className="text-xs text-[#153E43]/70 font-mono">Core Discipline</div>
+                <div className="text-sm font-bold text-[#153E43] mt-0.5">E-Commerce &amp; Speed</div>
               </div>
             </div>
           </div>
