@@ -79,6 +79,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
                 <p className="text-2xl sm:text-3xl font-black font-sans leading-tight">
                   Farhan Momen
                 </p>
+                <p className="text-xs text-[#F3EFE6]/90 font-mono tracking-wide mt-0.5">
+                  Momen Ahmedur Rahman Chowdhury (MARC)
+                </p>
                 <p className="text-xs text-[#C86445] font-mono font-bold uppercase tracking-wider mt-1">
                   Senior Web Infrastructure Specialist &amp; Testing Director
                 </p>
@@ -97,12 +100,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
                   </div>
                 </div>
                 <a
-                  href="https://marc.pages.dev"
+                  href="https://farhan.momen.pages.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#153E43] hover:bg-[#1A4B51] text-[#F3EFE6] text-xs font-mono font-bold tracking-wide transition-all shadow-xs hover:shadow-md"
                 >
-                  <span>marc.pages.dev</span>
+                  <span>farhan.momen.pages.dev</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#C86445]" />
                 </a>
               </div>
@@ -137,7 +140,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
             </h2>
             
             <p className="text-base sm:text-lg font-medium text-[#153E43] leading-relaxed">
-              I am a freelance website developer who entered this industry without a formal academic background — learning every layer of web systems through relentless curiosity, direct experimentation, and over 10 years of real-world trials.
+              I am <strong>Momen Ahmedur Rahman Chowdhury (MARC)</strong>, known in the web and client community as <strong>Farhan Momen</strong>. As a freelance website developer who entered this industry without a formal academic background, I mastered every layer of web systems through relentless curiosity, direct experimentation, and over 10 years of real-world trials.
             </p>
             
             <p>
@@ -191,12 +194,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenModal })
                 </a>
 
                 <a
-                  href="https://marc.pages.dev"
+                  href="https://farhan.momen.pages.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#153E43] text-[#F3EFE6] text-xs font-mono font-bold transition-opacity hover:opacity-95"
                 >
-                  <span>marc.pages.dev (Portfolio)</span>
+                  <span>farhan.momen.pages.dev (Portfolio)</span>
                   <ExternalLink className="w-3 h-3 text-[#C86445]" />
                 </a>
               </div>
