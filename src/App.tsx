@@ -17,42 +17,60 @@ import { ContactPage } from './components/pages/ContactPage';
 import { LegalPages } from './components/pages/LegalPages';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<PageId>('home');
+  const validPages: PageId[] = [
+    'home',
+    'reviews',
+    'comparisons',
+    'renewal-costs',
+    'migration',
+    'tools',
+    'deals',
+    'tutorials',
+    'use-cases',
+    'about',
+    'contact',
+    'disclosure',
+    'privacy',
+  ];
+
+  const getPageFromUrl = (): PageId => {
+    // 1. If user arrives via legacy hash (e.g. #reviews), migrate cleanly to /reviews
+    const rawHash = window.location.hash.replace(/^#\/?/, '').trim();
+    if (rawHash && validPages.includes(rawHash as PageId)) {
+      const cleanPath = rawHash === 'home' ? '/' : `/${rawHash}`;
+      window.history.replaceState({ page: rawHash }, '', cleanPath + window.location.search);
+      return rawHash as PageId;
+    }
+
+    // 2. Read clean pathname (e.g. /reviews, /about)
+    const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').trim();
+    if (rawPath && validPages.includes(rawPath as PageId)) {
+      return rawPath as PageId;
+    }
+
+    return 'home';
+  };
+
+  const [currentPage, setCurrentPage] = useState<PageId>(getPageFromUrl);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalCoupon, setModalCoupon] = useState('HOSTMARC');
 
-  // Sync hash routing if user clicks back/forward or navigates
+  // Sync clean pathname routing when user clicks back/forward
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '') as PageId;
-      const validPages: PageId[] = [
-        'home',
-        'reviews',
-        'comparisons',
-        'renewal-costs',
-        'migration',
-        'tools',
-        'deals',
-        'tutorials',
-        'use-cases',
-        'about',
-        'contact',
-        'disclosure',
-        'privacy',
-      ];
-      if (validPages.includes(hash)) {
-        setCurrentPage(hash);
-      }
+    const handlePopState = () => {
+      setCurrentPage(getPageFromUrl());
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   const handleNavigate = (page: PageId) => {
     setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : page;
+    const newPath = page === 'home' ? '/' : `/${page}`;
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({ page }, '', newPath + window.location.search);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
