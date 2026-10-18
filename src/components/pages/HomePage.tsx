@@ -3,6 +3,9 @@ import { PageId, HostingPlan } from '../../types';
 import { HOSTING_PLANS, BENCHMARK_REGIONS } from '../../data/comparisonsData';
 import { HeroSculpture } from '../HeroSculpture';
 import { ComparisonTable } from '../ComparisonTable';
+import rivermereImg from '../../assets/images/work_rivermere_arch_1792279543490.jpg';
+import evergreenImg from '../../assets/images/work_evergreen_goods_1792279543971.jpg';
+import sunlitbdImg from '../../assets/images/work_sunlitbd_interior_1792279543981.jpg';
 import {
   ArrowRight,
   CheckCircle2,
@@ -188,7 +191,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               <div>
                 <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
                   <img
-                    src="/src/assets/images/work_rivermere_arch_1792279543490.jpg"
+                    src={rivermereImg || "/images/work_rivermere_arch_1792279543490.jpg"}
                     alt="Rivermere Modern Architecture Studio"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -217,7 +220,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               <div>
                 <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
                   <img
-                    src="/src/assets/images/work_evergreen_goods_1792279543971.jpg"
+                    src={evergreenImg || "/images/work_evergreen_goods_1792279543971.jpg"}
                     alt="emarket247.shop eCommerce Platform"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -246,7 +249,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenModal }) =
               <div>
                 <div className="aspect-[16/10] bg-[#E8E2D5] rounded-xl overflow-hidden mb-5 relative border border-[#DDD5C6]">
                   <img
-                    src="/src/assets/images/work_sunlitbd_interior_1792279543981.jpg"
+                    src={sunlitbdImg || "/images/work_sunlitbd_interior_1792279543981.jpg"}
                     alt="Sunlitbd.com Interior Design & MEP Infrastructure"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
