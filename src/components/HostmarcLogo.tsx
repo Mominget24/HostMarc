@@ -46,6 +46,28 @@ export const HostmarcLogo: React.FC<HostmarcLogoProps> = ({
     );
   }
 
+  // Render extracted brand symbol image for symbol-only variant
+  if (!imageError && variant === 'symbol-only') {
+    const filterClass =
+      color === 'white'
+        ? 'brightness-0 invert'
+        : color === 'limestone'
+        ? 'brightness-0 invert opacity-90'
+        : '';
+
+    return (
+      <div className={`inline-flex items-center justify-center ${className}`}>
+        <img
+          src="/symbol_hostmarc.png"
+          alt="HostMarc"
+          style={height ? { height: `${height}px`, width: 'auto' } : undefined}
+          className={`object-contain select-none transition-opacity duration-200 ${filterClass} ${imgClassName}`}
+          onError={() => setImageError(true)}
+        />
+      </div>
+    );
+  }
+
   if (variant === 'symbol-only') {
     return (
       <svg
